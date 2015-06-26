@@ -3,12 +3,14 @@ Summary(pl.UTF-8):	Biblioteka wspierająca przechowywanie rastrów w bazach dany
 Name:		librasterlite2
 Version:	1.0.0
 %define	subver	rc0
-Release:	0.%{subver}.1
+Release:	0.%{subver}.2
 License:	MPL v1.1 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.gaia-gis.it/gaia-sins/librasterlite2-sources/%{name}-%{version}-%{subver}.tar.gz
 # Source0-md5:	2c0c9d41eb29f6e7bee62519eb8ac014
 URL:		https://www.gaia-gis.it/fossil/librasterlite2
+BuildRequires:	autoconf >= 2.61
+BuildRequires:	automake
 BuildRequires:	cairo-devel
 BuildRequires:	curl-devel
 BuildRequires:	giflib-devel
@@ -17,6 +19,7 @@ BuildRequires:	libjpeg-devel
 BuildRequires:	libpng-devel
 BuildRequires:	libspatialite-devel
 BuildRequires:	libtiff-devel
+BuildRequires:	libtool
 BuildRequires:	libwebp-devel
 BuildRequires:	libxml2-devel >= 2.0
 BuildRequires:	pkgconfig
@@ -65,6 +68,11 @@ Statyczna biblioteka rasterlite2.
 %setup -q -n %{name}-%{version}-%{subver}
 
 %build
+%{__libtoolize}
+%{__aclocal} -I m4
+%{__autoconf}
+%{__autoheader}
+%{__automake}
 %configure
 
 %{__make}
