@@ -1,9 +1,10 @@
+%define		rel	3
 Summary:	Library supporting rasters on DBMS
 Summary(pl.UTF-8):	Biblioteka wspierająca przechowywanie rastrów w bazach danych
 Name:		librasterlite2
 Version:	1.0.0
 %define	subver	rc0
-Release:	0.%{subver}.2
+Release:	0.%{subver}.%{rel}
 License:	MPL v1.1 or GPL v2+ or LGPL v2.1+
 Group:		Libraries
 Source0:	http://www.gaia-gis.it/gaia-sins/librasterlite2-sources/%{name}-%{version}-%{subver}.tar.gz
