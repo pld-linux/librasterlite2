@@ -1,4 +1,4 @@
-%define		rel	4
+%define		rel	5
 Summary:	Library supporting rasters on DBMS
 Summary(pl.UTF-8):	Biblioteka wspierająca przechowywanie rastrów w bazach danych
 Name:		librasterlite2
